@@ -26,16 +26,16 @@ class ViewController: UIViewController , ColorTableViewControllerDelegate{
     @IBOutlet weak var HSLLabel: UILabel!
     @IBOutlet weak var HSVLabel: UILabel!
     
+    @IBOutlet weak var previousColorLabel: UILabel!
+    
+    var currentColor:String!
+    
     // MARK: - Declarations
     
     var myColors:Colors = Colors()
     
     @IBOutlet weak var chosenColorLabel: UILabel!
     @IBOutlet weak var colorItemsLabel: UILabel!
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +81,9 @@ class ViewController: UIViewController , ColorTableViewControllerDelegate{
             //Tell the "tableVC" (of type ColorTableViewController in this case)
             //that it's delegate will be "self"
             tableVC.delegate = self
+            
+            //Set the previous color label to the current color before the transition
+            SetPreviousColorToCurrentColor()
         }
         
         //Here is a slightly different way to do the same thing
@@ -105,6 +108,8 @@ class ViewController: UIViewController , ColorTableViewControllerDelegate{
         let labelColor:UIColor = myColors.hexStringToUIColor(myColors.fetchHexValue(color))
         chosenColorLabel.backgroundColor = labelColor
         colorItemsLabel.text = color
+        
+        SetCurrentColor(chosenColor: color)
         
         let rgb = myColors.fetchRGB(color)
         let hsl = myColors.fetchHSL(color)
@@ -182,37 +187,16 @@ class ViewController: UIViewController , ColorTableViewControllerDelegate{
         println(self.myColors.fetchRGB("#CE2029"))
     }
     
-    @IBAction func redSliderValueChanged(sender: UISlider) {
-        var redValue = CGFloat(sender.value)/255
-        var blueValue = CGFloat(blueSlider.value)/255
-        var greenValue = CGFloat(greenSlider.value)/255
-        let newColor = UIColor(red:redValue, green:greenValue,blue:blueValue,alpha:1.0)
-        
-        chosenColorLabel.backgroundColor = newColor
-
+    func SetCurrentColor(chosenColor color:String){
+        currentColor = color
     }
     
-    @IBAction func greenSliderValueChanged(sender: UISlider) {
-        var redValue = CGFloat(redSlider.value)/255
-        var blueValue = CGFloat(blueSlider.value)/255
-        var greenValue = CGFloat(sender.value)/255
-        let newColor = UIColor(red:redValue, green:greenValue,blue:blueValue,alpha:1.0)
-        
-        chosenColorLabel.backgroundColor = newColor
-        
+    func SetPreviousColorToCurrentColor(){
+        if(currentColor != nil){
+            let labelColor:UIColor = myColors.hexStringToUIColor(myColors.fetchHexValue(currentColor))
+            previousColorLabel.backgroundColor = labelColor
+        }
     }
-    
-    @IBAction func blueSliderValueChanged(sender: UISlider) {
-        var redValue = CGFloat(redSlider.value)/255
-        var blueValue = CGFloat(sender.value)/255
-        var greenValue = CGFloat(greenSlider.value)/255
-        let newColor = UIColor(red:redValue, green:greenValue,blue:blueValue,alpha:1.0)
-        
-        chosenColorLabel.backgroundColor = newColor
-        
-    }
-    
-    
     
 }
 
