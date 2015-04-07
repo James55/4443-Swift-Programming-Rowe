@@ -22,6 +22,10 @@ extension UIColor
 
 class ViewController: UIViewController , ColorTableViewControllerDelegate{
     
+    @IBOutlet weak var RGBLabel: UILabel!
+    @IBOutlet weak var HSLLabel: UILabel!
+    @IBOutlet weak var HSVLabel: UILabel!
+    
     // MARK: - Declarations
     
     var myColors:Colors = Colors()
@@ -103,14 +107,17 @@ class ViewController: UIViewController , ColorTableViewControllerDelegate{
         colorItemsLabel.text = color
         
         let rgb = myColors.fetchRGB(color)
+        let hsl = myColors.fetchHSL(color)
+        let hsv = myColors.fetchHSV(color)
         let r = Float(255*rgb.R)
         let g = Float(255*rgb.G)
         let b = Float(255*rgb.B)
         
+        RGBLabel.text = "\(r) , \(g) , \(b)"
+        HSLLabel.text = "\(hsl.H) , \(hsl.S) , \(hsl.L)"
+        HSVLabel.text = "\(hsv.H) , \(hsv.S) , \(hsv.V)"
+        
         println("red: \(r)")
-        redSlider.setValue(r, animated: true)
-        greenSlider.setValue(g, animated: true)
-        blueSlider.setValue(b, animated: true)
         
         println(labelColor)
     }
