@@ -11,8 +11,11 @@
 		7B0605F619C0711900EF873D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0605F519C0711900EF873D /* ViewController.swift */; };
 		7B0605F919C0711900EF873D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0605F719C0711900EF873D /* Main.storyboard */; };
 		7B0605FB19C0711900EF873D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0605FA19C0711900EF873D /* Images.xcassets */; };
-		7B0605FE19C0711900EF873D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0605FC19C0711900EF873D /* LaunchScreen.xib */; };
 		7B06060A19C0711900EF873D /* BullsEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06060919C0711900EF873D /* BullsEyeTests.swift */; };
+		7B06061519C221E000EF873D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06061319C218B300EF873D /* AboutViewController.swift */; };
+		7B06061719C3059000EF873D /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 7B06061619C3059000EF873D /* BullsEye.html */; };
+		7B06061A19C3433C00EF873D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B06061819C3433C00EF873D /* Default-568h@2x.png */; };
+		7B06061B19C3433C00EF873D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B06061919C3433C00EF873D /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +35,13 @@
 		7B0605F519C0711900EF873D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B0605F819C0711900EF873D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B0605FA19C0711900EF873D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7B0605FD19C0711900EF873D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7B06060319C0711900EF873D /* BullsEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06060819C0711900EF873D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B06060919C0711900EF873D /* BullsEyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeTests.swift; sourceTree = "<group>"; };
+		7B06061319C218B300EF873D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7B06061619C3059000EF873D /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
+		7B06061819C3433C00EF873D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7B06061919C3433C00EF873D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +85,14 @@
 		7B0605F019C0711900EF873D /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				7B06061819C3433C00EF873D /* Default-568h@2x.png */,
+				7B06061919C3433C00EF873D /* Default@2x.png */,
+				7B06061619C3059000EF873D /* BullsEye.html */,
 				7B0605F319C0711900EF873D /* AppDelegate.swift */,
 				7B0605F519C0711900EF873D /* ViewController.swift */,
+				7B06061319C218B300EF873D /* AboutViewController.swift */,
 				7B0605F719C0711900EF873D /* Main.storyboard */,
 				7B0605FA19C0711900EF873D /* Images.xcassets */,
-				7B0605FC19C0711900EF873D /* LaunchScreen.xib */,
 				7B0605F119C0711900EF873D /* Supporting Files */,
 			);
 			path = BullsEye;
@@ -195,7 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B0605F919C0711900EF873D /* Main.storyboard in Resources */,
-				7B0605FE19C0711900EF873D /* LaunchScreen.xib in Resources */,
+				7B06061A19C3433C00EF873D /* Default-568h@2x.png in Resources */,
+				7B06061B19C3433C00EF873D /* Default@2x.png in Resources */,
+				7B06061719C3059000EF873D /* BullsEye.html in Resources */,
 				7B0605FB19C0711900EF873D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B06061519C221E000EF873D /* AboutViewController.swift in Sources */,
 				7B0605F619C0711900EF873D /* ViewController.swift in Sources */,
 				7B0605F419C0711900EF873D /* AppDelegate.swift in Sources */,
 			);
@@ -244,14 +256,6 @@
 				7B0605F819C0711900EF873D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7B0605FC19C0711900EF873D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7B0605FD19C0711900EF873D /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -407,6 +411,7 @@
 				7B06060F19C0711900EF873D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B06061019C0711900EF873D /* Build configuration list for PBXNativeTarget "BullsEyeTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				7B06061219C0711900EF873D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
